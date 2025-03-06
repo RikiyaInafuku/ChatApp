@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>教授への質問チャット</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="chat_features" hidden>
+      <!-- チャット機能全体を囲む -->
+      <div class="sidebar">UI/UX</div>
+
+      <div class="main">
+        <div id="user_info">
+          <h4>
+            <span id="user">ユーザ名</span>
+            <button id="signout">サインアウトする</button>
+          </h4>
+        </div>
+
+        <h4>
+          room名： <span id="room_name">未設定</span>
+          <button id="reload_messages">更新</button>
+          <button id="return_to_default_room" hidden>prog1_bbsに戻る</button>
+        </h4>
+
+        <div class="message-list">
+          <h2>掲示板</h2>
+          <div class="scrollable" id="messages">
+            <!-- メッセージがここに追加される -->
+          </div>
+        </div>
+
+        <div class="input-area">
+          <textarea id="message" placeholder="質問を入力"></textarea>
+          <button id="post_message">投稿</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="singin_form">
+      <h3>Plese sign in</h3>
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+      </p>
+      <button id="signin">Sign in</button>
+    </div>
+
+    <script src="https://rawgit.com/leizongmin/js-xss/master/dist/xss.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

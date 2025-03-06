@@ -1,0 +1,323 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #d97643;
+  width: 20%;
+  height: 100vh; /* サイドバーの高さを画面全体に */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0; /* サイドバーが縮小しないように設定 */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上下に要素を均等配置 */
+  width: 80%;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh; /* メインコンテンツも画面全体に */
+  box-sizing: border-box; /* パディングを含めたサイズ調整 */
+}
+
+/* ユーザ情報部分のスタイル */
+#user_info {
+  margin-bottom: 5px; /* 下の余白を小さく */
+}
+
+#user_info h4 {
+  margin: 0; /* h4の余白をリセット */
+  line-height: 1.2; /* 行間を調整 */
+  font-size: 16px; /* フォントサイズを調整 */
+}
+
+/* room名のスタイル */
+.main h4 {
+  margin: 0; /* h4の余白をリセット */
+  line-height: 1.2; /* 行間を調整 */
+  font-size: 16px; /* フォントサイズを調整 */
+  display: flex; /* ボタンと内容を横並びに */
+  align-items: center; /* 縦の中央揃え */
+  gap: 10px; /* ボタンと内容の間にスペース */
+}
+
+h1 {
+  margin-top: 0;
+}
+.input-area {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input-area textarea {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+.function-box button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.function-box button:hover {
+  background-color: #0056b3;
+}
+.function-box {
+  margin-top: 20px;
+}
+/* メッセージ全体を囲む */
+.message {
+  margin-bottom: 20px; /* 各メッセージの間に余白を追加 */
+  display: flex;
+  flex-direction: column; /* ボタンをメッセージの下に配置 */
+}
+
+/* ボタンのスタイル */
+.message button {
+  align-self: flex-start; /* ボタンを左寄せに */
+  margin-top: 10px; /* ボタンとメッセージの間に余白 */
+}
+.message-list {
+  flex: 1; /* 余った高さを占有 */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* 縦スクロールを有効にする */
+  box-sizing: border-box;
+  width: 95%; /* 横幅を調整。数値を減らすと横幅が短くなる */
+  margin-left: 0; /* 左右の余白を均等に */
+}
+
+.message-list h2 {
+  position: sticky; /* スクロールに追従 */
+  top: 0; /* 上部に固定 */
+  background-color: #f9f9f9; /* 背景色を指定 */
+  margin: 0; /* 余白をリセット */
+  padding: 10px; /* ヘッダー部分に余白を設定 */
+  z-index: 1; /* 他の要素の上に表示されるようにする */
+  border-bottom: 1px solid #ddd; /* 下線を追加して区切りを明確に */
+}
+
+/* メッセージのメタデータ部分 */
+.message-metadata {
+  margin-bottom: 5px; /* テキストとの間に余白を追加 */
+  font-size: 14px; /* メタデータのフォントサイズ */
+  color: #555; /* メタデータの文字色 */
+}
+
+/* メッセージ内容部分 */
+.message-content {
+  margin-top: 5px; /* メタデータとの間に余白を追加 */
+  font-size: 16px; /* メッセージ内容のフォントサイズ */
+  line-height: 1.5; /* 行間を調整 */
+}
+
+.scrollable {
+  width: 100%;
+  height: 100%; /* スクロール部分を最大化 */
+  overflow-y: scroll;
+}
+p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ボタンコンテナのスタイル */
+.button-container {
+  display: flex;
+  gap: 10px; /* ボタン間のスペース */
+  margin-top: 10px; /* メッセージとの余白 */
+}
+
+/* ボタンの共通スタイル */
+.button-container button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* 移動ボタンのスタイル */
+.move-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.move-button:hover {
+  background-color: #0056b3;
+}
+
+/* 削除ボタンのスタイル */
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.edit-button {
+  background-color: #ffc107;
+  color: black;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+}
+
+/* 編集用テキストエリアのスタイル */
+.edit-textarea {
+  width: 100%; /* 横幅をメッセージ全体に広げる */
+  height: 100px; /* 縦幅を指定（ここを変更すると高さを調整可能） */
+  padding: 10px; /* 内側の余白を設定 */
+  font-size: 14px; /* フォントサイズを設定 */
+  line-height: 1.5; /* 行間を調整 */
+  border: 1px solid #ccc; /* 境界線を設定 */
+  border-radius: 4px; /* 角を丸くする */
+  resize: vertical; /* ユーザーが縦方向にサイズ変更可能にする */
+  box-sizing: border-box; /* パディングとボーダーを含めたサイズ調整 */
+}
+
+/* フォーム全体のスタイル */
+#singin_form {
+  width: 420px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* フォーム内のアイテムを縦に並べる */
+  align-items: center; /* アイテムを中央に配置 */
+  justify-content: center; /* 中央寄せ */
+  height: 220px; /* フォームの高さを固定 */
+}
+
+/* 各入力フィールドのラベルとフィールドの間隔 */
+#singin_form p {
+  margin-bottom: 15px;
+}
+
+/* 入力フィールドのスタイル */
+#singin_form input[type="text"],
+#singin_form input[type="password"] {
+  width: 100%; /* フォーム内で横幅を最大化 */
+  max-width: 400px; /* 最大幅を設定 */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+#singin_form input[type="text"]:focus,
+#singin_form input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ボタンのスタイル */
+#signin {
+  width: 100%;
+  max-width: 420px; /* 最大幅を設定 */
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#signin:hover {
+  background-color: #0056b3;
+}
+
+/* モバイル対応 */
+@media (max-width: 400px) {
+  #singin_form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #singin_form input[type="text"],
+  #singin_form input[type="password"] {
+    font-size: 12px;
+  }
+
+  #signin {
+    font-size: 14px;
+  }
+}
+
+#chat_features {
+  display: none; /* 初期状態で非表示 */
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* <pre> タグ全体のスタイル */
+pre {
+  background-color: #f5f5f5; /* 背景を薄いグレーに */
+  padding: 10px; /* 内側の余白を追加 */
+  border: 1px solid #ddd; /* 境界線を追加 */
+  border-radius: 5px; /* 角を丸める */
+  overflow-x: auto; /* 横スクロール対応 */
+  font-family: "Courier New", Courier, monospace; /* 等幅フォント */
+  font-size: 15px; /* フォントサイズを設定 */
+  white-space: pre-wrap; /* 改行や空白をそのまま表示 */
+}
+
+/* <code> 内のスタイル */
+pre .code-block {
+  display: block;
+  color: #333; /* 文字色を濃いグレーに */
+  background-color: #e8f0fe; /* コード部分を薄い青に */
+  padding: 5px; /* コード部分に余白を追加 */
+  border-left: 3px solid #4285f4; /* コード部分に左側の装飾線 */
+}
